@@ -33,8 +33,62 @@
 
 <body {{{ bodyattributes }}}>
 {{> core/local/toast/wrapper}}
-
-<div id="page-wrapper">
+<style>
+    html,
+    body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    }
+    @media (max-width:480px){
+    .res-box{
+    width:100% !important;
+    }
+    }
+    body#page-login-forgot_password .custom-login-container,body#page-login-signup .custom-login-container {
+        padding: 20px;
+    }
+    body#page-login-forgot_password .custom-main{
+        height: 100%;
+    }
+</style>
+<div class="custom-main" style="
+    width: 100%;
+    position: relative;
+    background: url(/bg-form.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    ">
+    <div class="res-box" style="
+        width: 70%;
+        top: 0;
+        height: auto;
+        position: relative;
+        margin: 50px auto;
+        overflow: hidden;
+        background: #dce5b8;
+        border-width: 1px;
+        border-color: #000;
+    ">
+    {{{ output.standard_top_of_body_html }}}
+    <div class="custom-login-container">
+    {{{ output.main_content }}}
+    </div>
+    </div>
+<p style="width: 100%;
+position: relative;
+display: inline-block;
+text-align:center; 
+color:white;
+margin-bottom:50px;
+">Copyright @ Deakin Uni - 2022</p>
+    {{> theme_boost/footer }}
+</div>
+<!--<div id="page-wrapper">
 
     {{{ output.standard_top_of_body_html }}}
 
@@ -51,9 +105,9 @@
             </div>
         </div>
     </div>
-    {{> theme_boost/footer }}
 </div>
-
+-->
+    {{> theme_boost/footer }}
 </body>
 </html>
 {{#js}}
